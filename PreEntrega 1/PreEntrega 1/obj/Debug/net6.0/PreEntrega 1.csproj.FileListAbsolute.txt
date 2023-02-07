@@ -1,0 +1,22 @@
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\PreEntrega 1.csproj.AssemblyReference.cache
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\PreEntrega 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\PreEntrega 1.AssemblyInfoInputs.cache
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\PreEntrega 1.AssemblyInfo.cs
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\PreEntrega 1.csproj.CoreCompileInputs.cache
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\PreEntrega 1.exe
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\PreEntrega 1.deps.json
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\PreEntrega 1.runtimeconfig.json
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\PreEntrega 1.dll
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\PreEntrega 1.pdb
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\PreEntrega 1.csproj.CopyComplete
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\PreEntrega 1.dll
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\refint\PreEntrega 1.dll
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\PreEntrega 1.pdb
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\PreEntrega 1.genruntimeconfig.cache
+D:\Repositorios VSC\PreEntrega 1\PreEntrega 1\obj\Debug\net6.0\ref\PreEntrega 1.dll
