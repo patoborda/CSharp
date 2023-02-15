@@ -47,16 +47,13 @@ namespace MiPrimeraApi.Repository
 
 
 
-
-
-
         public static int InsertarProductoVendido(ProductoVenta productoVenta)
         {
             using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
                 SqlCommand comando = new SqlCommand("INSERT INTO ProductoVendido (Stock, IdProducto, IdVenta) VALUES(@stock, @idProducto, @idVenta)", conn);
                 comando.Parameters.AddWithValue("@stock",productoVenta.Stock);
-                comando.Parameters.AddWithValue("@idProduct", productoVenta.IdProducto);
+                comando.Parameters.AddWithValue("@idProducto", productoVenta.IdProducto);
                 comando.Parameters.AddWithValue("@idVenta", productoVenta.IdVenta);
 
                 conn.Open();

@@ -87,7 +87,8 @@ namespace MiPrimeraApi
         {
             using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
-                SqlCommand comando = new SqlCommand("UPDATE Producto SET Descripciones = @descripciones, Costo = @costo, PrecioVenta = @precioVenta, Stock = @stock, IdUsuario = @idUsuario", conn);
+                SqlCommand comando = new SqlCommand("UPDATE Producto SET Descripciones = @descripciones, Costo = @costo, PrecioVenta = @precioVenta, Stock = @stock, IdUsuario = @idUsuario WHERE Id = @identificador", conn);
+                comando.Parameters.AddWithValue("@identificador", producto.Id);
                 comando.Parameters.AddWithValue("@descripciones", producto.Descripciones);
                 comando.Parameters.AddWithValue("@costo", producto.Costo);
                 comando.Parameters.AddWithValue("@precioVenta", producto.PrecioVenta);
@@ -131,21 +132,11 @@ namespace MiPrimeraApi
         }
 
 
-        //****************************************************************************************************************************************************//
-
-
-
-
         public static int UpdateStockProducto (long id, int cantidadVendidos)
         {
             Producto producto = ObtenerProducto(id);
             producto.Stock -= cantidadVendidos;
             return ModificarProducto(producto);
         }
-
-
-
-
-
     }
 }

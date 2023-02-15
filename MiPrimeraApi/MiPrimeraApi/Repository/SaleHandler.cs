@@ -58,26 +58,18 @@ namespace MiPrimeraApi.Repository
             venta.IdUsuario= idUsuario;
             long idVentaInsertada = InsertarVenta(venta);
 
-            List<Producto> producto = new List<Producto>();
             foreach (var item in productosVendidos)
             {
-                Producto prodTemp = ProductHandler.ObtenerProducto(item.Id);
-                producto.Add(prodTemp);
-                
-            }   
-
+                ProductoVenta pv = new ProductoVenta();
+                pv.Stock= item.Stock;
+                pv.IdProducto = item.Id;
+                pv.IdVenta = idVentaInsertada;
+                SoldProductsHandler.InsertarProductoVendido(pv);
+            }
+            foreach (var producto in productosVendidos)
+            {
+                ProductHandler.UpdateStockProducto(producto.Id, producto.Stock);     
+            }
         }
     }
-
 }
-
-/*
-
-                item.Id = productosVendidos[0].Id;
-                item.Descripciones = productosVendidos[1].Descripciones;
-                item.Costo = productosVendidos[2].Costo;
-                item.PrecioVenta = productosVendidos[3].PrecioVenta;
-                item.Stock = productosVendidos[4].Stock;
-                item.IdUsuario = idUsuario;
-                producto.Add(item);
-*/

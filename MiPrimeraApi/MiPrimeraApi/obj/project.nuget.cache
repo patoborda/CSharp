@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "56LE2VH55ESFoM4dBw74e04PnWttT6pAAPXUAvva8dZfLABThXyMeGjqk3nmAXFrfafXnZNPVAm6daZR0fWi+g==",
+  "dgSpecHash": "Y7CYr7mFyKos2JQeq5K9XvynBThNCQ0vw2P5XrfTod3oc18fRZevG3UDAgoiIv2xvri5LFlB2eLxNRlIeA6/XA==",
   "success": true,
-  "projectFilePath": "D:\\Repositorios VSC\\MiPrimeraApi\\MiPrimeraApi\\MiPrimeraApi.csproj",
+  "projectFilePath": "C:\\Users\\Pato\\Desktop\\coder\\CSharp\\MiPrimeraApi\\MiPrimeraApi\\MiPrimeraApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pato\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Pato\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
