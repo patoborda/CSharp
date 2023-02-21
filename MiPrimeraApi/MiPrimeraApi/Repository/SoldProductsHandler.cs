@@ -12,7 +12,7 @@ namespace MiPrimeraApi.Repository
     {
         public static string cadenaConexion = "Data Source=DESKTOP-G4PMQO5;Initial Catalog=SistemaGestion;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         //*********************************** Traer ProductosVendidos (recibe el id del usuario y devuelve una lista de productos vendidos por ese usuario) ***********************************//
-        public static List<Producto> ObtenerProductosVendidos(long IdUsuario)
+        public static List<ProductoVenta> ObtenerProductosVendidos(long IdUsuario)
         {
             List<long> ListaIdProductos = new List<long>();
 
@@ -33,18 +33,43 @@ namespace MiPrimeraApi.Repository
                     }
                 }
 
-                List<Producto> productos = new List<Producto>();
+                List<ProductoVenta> productosVendidos = new List<ProductoVenta>();
                 foreach (var id in ListaIdProductos)
                 {
-                    Producto prodTemp = ProductHandler.ObtenerProducto(id);
-                    productos.Add(prodTemp);
+                    ProductoVenta prodTemp = ObtenerPv(id);
+                    productosVendidos.Add(prodTemp);
                 }
 
-                return productos;
+                return productosVendidos;
 
             }
         }
+        public static ProductoVenta ObtenerPv(long idProducto)
+        {
+            ProductoVenta productoVendido = new ProductoVenta();
 
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
+            {
+
+                SqlCommand comando = new SqlCommand("SELECT * FROM ProductoVendido WHERE IdProducto=@idProducto", conn);
+
+
+                comando.Parameters.AddWithValue("@idProducto", idProducto);
+
+                conn.Open();
+
+                SqlDataReader reader = comando.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    productoVendido.Id = reader.GetInt64(0);
+                    productoVendido.Stock = reader.GetInt32(1);
+                    productoVendido.IdProducto = reader.GetInt64(2);
+                    productoVendido.IdVenta = reader.GetInt64(3);   
+                }
+            }
+            return productoVendido;
+        }
 
 
         public static int InsertarProductoVendido(ProductoVenta productoVenta)

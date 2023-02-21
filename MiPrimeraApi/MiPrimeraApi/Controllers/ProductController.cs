@@ -9,22 +9,27 @@ namespace MiPrimeraApi.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        [HttpGet("{idUsuario}")]
+        public List<Producto> TraerProductos(long idUsuario)
+        {
+            return ProductHandler.ObtenerProductos(idUsuario);
+        }
 
         [HttpPost]
-        public void CreateProduct(Producto producto)
+        public int CreateProduct(Producto producto)
         {
-            ProductHandler.InsertarProducto(producto);
+            return ProductHandler.InsertarProducto(producto);
         }
 
         [HttpPut]
-        public void UpdateProduct(Producto producto)
+        public int UpdateProduct(Producto producto)
         {
-            ProductHandler.ModificarProducto(producto);
+            return ProductHandler.ModificarProducto(producto);
         }
         [HttpDelete("{id}")]
-        public void DeleteProduct(int id)
+        public int DeleteProduct(int id)
         {
-            ProductHandler.EliminarProducto(id);
+            return ProductHandler.EliminarProducto(id);
         }
 
     }

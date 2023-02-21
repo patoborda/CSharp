@@ -14,5 +14,11 @@ namespace MiPrimeraApi.Controllers
         {
             SaleHandler.CargarVenta(idUsuario, productosVendidos);    
         }
+
+        [HttpGet("{idUsuario}")]
+        public List<Venta> TraerVentas(long idUsuario)
+        {
+           return SaleHandler.ObtenerVentas(idUsuario);
+        }
     }
 }

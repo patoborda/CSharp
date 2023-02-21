@@ -8,10 +8,32 @@ namespace MiPrimeraApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        [HttpPut]
-        public void Update(Usuario usuario)
+        [HttpGet("{username}/{password}")]
+        public Usuario Login(string username, string password)
         {
-            UserHandler.ModificarUsuario(usuario);        
+            return UserHandler.LogIn(username, password);
         }
+
+        [HttpGet("{username}")]
+        public Usuario TraerUsuario(string username) {
+            return UserHandler.GetUser(username);
+        }
+
+        [HttpPost]
+        public int Registro(Usuario usuario)
+        {
+            return UserHandler.CrearUsuario(usuario);         
+        }
+        [HttpPut]
+        public int Update(Usuario usuario)
+        {
+            return UserHandler.ModificarUsuario(usuario);        
+        }
+        [HttpDelete("{idUsuario}")]
+        public int Delete(long idUsuario)
+        {
+            return UserHandler.EliminarUsuario(idUsuario);
+        }
+
     }
 }

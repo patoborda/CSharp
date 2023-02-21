@@ -18,7 +18,7 @@ namespace MiPrimeraApi.Repository
             List<Venta> productosVentas = new List<Venta>();
             using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
-                SqlCommand comando = new SqlCommand(" SELECT IdVenta, Comentarios FROM ProductoVendido  INNER JOIN Venta ON ProductoVendido.IdVenta= Venta.Id WHERE IdUsuario = @idUsuario", conn);
+                SqlCommand comando = new SqlCommand(" SELECT IdVenta, Comentarios, IdUsuario FROM ProductoVendido  INNER JOIN Venta ON ProductoVendido.IdVenta= Venta.Id WHERE IdUsuario = @idUsuario", conn);
                 comando.Parameters.AddWithValue("IdUsuario", IdUsuario);
                 conn.Open();
 
@@ -30,6 +30,8 @@ namespace MiPrimeraApi.Repository
                         Venta productoTemporal = new Venta();
                         productoTemporal.Id = reader.GetInt64(0);
                         productoTemporal.Comentarios = reader.GetString(1);
+                        productoTemporal.IdUsuario = reader.GetInt64(2);
+                       
 
                         productosVentas.Add(productoTemporal);
                     }
