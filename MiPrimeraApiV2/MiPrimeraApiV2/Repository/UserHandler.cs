@@ -111,6 +111,7 @@ namespace MiPrimeraApiV2.Repository
                     " INSERT INTO Usuario (Nombre, Apellido, NombreUsuario, Contraseña, Mail) " +
                     " VALUES (@nombre, @apellido, @nombreUsuario, @contraseña, @mail)" +
                     " end", conn);
+
                 comando.Parameters.AddWithValue("@nombre", usuario.Nombre);
                 comando.Parameters.AddWithValue("@apellido", usuario.Apellido);
                 comando.Parameters.AddWithValue("@nombreUsuario", usuario.NombreUsuario);
@@ -119,11 +120,11 @@ namespace MiPrimeraApiV2.Repository
 
                 /*Uso de condiciones para verificar por consola si se creo con exito el usuario al no repetirse*/
                 if (UsuarioEncontrado.Mail == usuario.Mail || UsuarioEncontrado.NombreUsuario == usuario.NombreUsuario) {
-                    Console.WriteLine("Usuario y/o Mail en uso");
+                    Console.WriteLine("USUARIO Y/O MAIL YA EN USO, REGISTRESE DE NUEVO");
                 }
                 else
                 {
-                    Console.WriteLine(usuario.NombreUsuario + " Te has registrado con exito");
+                    Console.WriteLine(usuario.NombreUsuario + " TE HAS REGISTRADO CON EXITO");
                 }
                     conn.Open();
                     return comando.ExecuteNonQuery();
@@ -139,12 +140,10 @@ namespace MiPrimeraApiV2.Repository
             {
                 Usuario UsuarioEncontrado = BuscarUsuario(usuario.NombreUsuario, usuario.Mail);
 
-                SqlCommand comando = new SqlCommand(" if(not exists(SELECT * FROM Usuario WHERE NombreUsuario = @nombreUsuario OR Mail = @mail))" +
-                    " begin " +
+                SqlCommand comando = new SqlCommand(
                     " UPDATE Usuario " +
                     " SET Nombre = @nombre, Apellido = @apellido, NombreUsuario = @nombreUsuario, Contraseña = @contraseña, Mail = @mail " +
-                    " WHERE Id = @identificador" +
-                    " end", conn);
+                    " WHERE Id = @identificador", conn);
 
                 comando.Parameters.AddWithValue("@identificador", usuario.Id);
                 comando.Parameters.AddWithValue("@nombre", usuario.Nombre);
@@ -156,11 +155,11 @@ namespace MiPrimeraApiV2.Repository
                 /*Uso de condiciones para verificar por consola si se modifico con exito el usuario al no repetirse*/
                 if (UsuarioEncontrado.Mail == usuario.Mail || UsuarioEncontrado.NombreUsuario == usuario.NombreUsuario)
                 {
-                    Console.WriteLine("Usuario y/o Mail en uso");
+                    Console.WriteLine("ADVERTENCIA: MAIL Y/O USUARIO YA EN USO VERIFIQUE ANTES DE CONTINUAR");
                 }
                 else
                 {
-                    Console.WriteLine(usuario.NombreUsuario + " Has modificado con exito");
+                    Console.WriteLine(usuario.NombreUsuario + " HAS MODIFICADO CON EXITO!");
                 }
                     conn.Open();
                     return comando.ExecuteNonQuery();

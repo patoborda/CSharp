@@ -4,8 +4,20 @@ namespace MiPrimeraApiV2
 {
     public class Program
     {
+
+
+
         public static void Main(string[] args)
         {
+            Console.WriteLine("********************************************************************************");
+            Console.WriteLine("" +
+                " ALUMNO = BORDA ALESANDRO PATRICIO\r\n" +
+                " TUTOR = RAUL AHUMADA\r\n" +
+                " PROFESOR = JOSUE BURBANO\r\n" +
+                " FECHA = 22/02/2023");
+            Console.WriteLine("********************************************************************************");
+
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.

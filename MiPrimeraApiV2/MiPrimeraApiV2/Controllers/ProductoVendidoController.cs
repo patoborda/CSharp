@@ -11,9 +11,9 @@ namespace MiPrimeraApiV2.Controllers
     {
         /****************************************************** TRAER LISTA DE PRODUCTOS VENDIDOS ******************************************************/
         [HttpGet("{idUsuario}")]
-        public List<Producto> TraerProductosVendidos(long idUsuario)
+        public List<ProductoVenta> TraerProductosVendidos(long idUsuario)
         {
-           return SoldProductsHandler.ObtenerProductosVendidos(idUsuario);
+           return SoldProductsHandler.ObtenerListaPv(idUsuario);
             
         }
 
